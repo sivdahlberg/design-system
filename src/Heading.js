@@ -1,9 +1,22 @@
 import Text from './Text'
 import theme from './theme'
+import PropTypes from 'prop-types'
 
 const Heading = Text.withComponent('h3')
 
 Heading.displayName = 'Heading'
+
+const numberStringOrArray = PropTypes.oneOfType([
+  PropTypes.number,
+  PropTypes.string,
+  PropTypes.array
+])
+
+Heading.propTypes = {
+  fontSize: numberStringOrArray,
+  m: numberStringOrArray,
+  bold: PropTypes.bool
+}
 
 Heading.defaultProps = {
   regular: true,
